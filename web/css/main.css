@@ -1,0 +1,257 @@
+/* ----------------------------------------------------
+// html elements
+// --------------------------------------------------*/
+html {
+  background: url(/img/shadowman.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  color: #CCCCCC;
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #900021;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+  color: #303030;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 180%;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 160%;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 125%;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 115%;
+}
+
+/* ----------------------------------------------------
+// custom
+// --------------------------------------------------*/
+#logo {
+  float: left;
+  border: none;
+  margin: 5px;
+  position: absolute;
+  left: 80px;
+  top: 20px;
+}
+
+#content {
+  margin: auto;
+  width: 90%;
+  clear: both;
+}
+
+#talks {
+  border: 1px solid #FFFFFF;
+  padding: 15px;
+  font-size: 150%;
+  width: 750px;
+  position: absolute;
+  top: 100px;
+  left: 550px;
+  /*
+  transform: translateY(10%);
+  */
+}
+
+#talks li {
+  list-style-type: square;
+  font-size: 150%;
+}
+
+#talks h3 {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+#talks h4 {
+  font-size: 120%;
+}
+
+#talks table {
+  border: 1px solid #CCCCCC;
+  padding: 1px;
+  width: 100%;
+}
+
+#talks td {
+  border: 1px solid #CCCCCC;
+  padding: 1px;
+}
+
+#hackerbattleship {
+  clear: both;
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  width: 400px;
+  border: 3px solid #FFFFFF;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+#hackerbattleship h2 {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+#score {
+  margin: auto;
+  background-color: #000000;
+  padding: 3px;
+  font-size: x-large;
+}
+
+#score table {
+  border: 1px solid #CCCCCC;
+  padding: 1px;
+  width: 87%;
+  margin: auto;
+  table-layout: fixed;
+  word-wrap: break-word;
+  font-size: 80%;
+}
+
+#score td {
+  border: 1px solid #CCCCCC;
+  padding: 1px;
+}
+
+#board {
+  margin: auto;
+  background-color: #000000;
+  width: 400px;
+  text-align: center;
+  font-size: large;
+}
+
+#board ul {
+  margin-bottom: 0.4em;
+  display: block;
+  width: 380px;
+  margin-left: -30px;
+}
+
+#board li {
+  margin: 0 1%;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid #C0C0C0;
+  text-align:center;
+  vertical-align:center;
+}
+
+
+/* ----------------------------------------------------
+// classes
+// --------------------------------------------------*/
+
+.track {
+  border: 1px solid #C0C0C0;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.now {
+  background-color: #C0C0C0;
+  color: #000000;
+}
+
+.next {
+  background-color: #333333;
+  color: #C0C0C0;
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten {
+  float: left;
+  display: block;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.wide { width: 100%; }
+.tall { height: 100%; }
+
+.one { width: 8%;  }
+.two { width: 18%; }
+.three { width: 28%; }
+.four { width: 38%; }
+.five { width: 48%; }
+.six { width: 58%; }
+.seven { width: 68%; }
+.eight { width: 78%; }
+.nine { width: 88%; }
+.ten { width: 98%; }
+
+.first { margin-left: 0; }
+.last { margin-right: 0; }
+
+.off-one { margin-left: 11%;  }
+.off-two { margin-left: 21%; }
+.off-three { margin-left: 31%; }
+.off-four { margin-left: 41%; }
+.off-five { margin-left: 51%; }
+.off-six { margin-left: 61%; }
+.off-seven { margin-left: 71%; }
+.off-eight { margin-left: 81%; }
+.off-nine { margin-left: 91%; }
+
+/* fonts */
+/* this is the Titillium Web font from http://fonts.googleapis.com/css?family=Titillium+Web:600 */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(/fonts/titillium_web_latin_ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(/fonts/titillium_web_latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

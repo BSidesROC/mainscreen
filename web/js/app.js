@@ -32,6 +32,8 @@ jQuery(document).ready(function() {
   function grid_rcvr(data) {
     // iterate through the JSON data
     $.each(data, function(k,v) {
+      $('#grid').append('<li class="' + v + '">' + k + '</li>');
+    /*
       var col = 0;
       var maxcols = 7;
       while( col < maxcols ) {
@@ -49,6 +51,7 @@ jQuery(document).ready(function() {
         // increment the counter
         col++;
       }
+    */
     });
     //$('#grid li:nth-child(7)').append('<br>');
 

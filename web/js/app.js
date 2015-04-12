@@ -2,7 +2,6 @@ jQuery(document).ready(function() {
 
   fetch_scores(); // gets the scores from the API
   fetch_grid();   // gets the grid from the API
-  fix_grid()      // re-aligns grid blocks and tweaks hit/miss styles
 
 });
 
@@ -56,6 +55,8 @@ function grid_rcvr(data) {
       $('#grid').append('<li class="' + v + '">' + k + '</li>');
       cur++;
     }
+
+    fix_grid()      // re-aligns grid blocks and tweaks hit/miss styles
 
   });
 }

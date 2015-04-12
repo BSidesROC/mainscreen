@@ -1,5 +1,13 @@
 jQuery(document).ready(function() {
 
+  fetch_scores(); // gets the scores from the API
+  fetch_grid();   // gets the grid from the API
+  fix_grid()      // re-aligns grid blocks and tweaks hit/miss styles
+
+});
+
+
+function fetch_scores() {
   //fetch the score data from the hackerbattleship API
   $.ajax({
     url: 'http://hackerbattleship/statsapi.php?mth=score',
@@ -7,17 +15,11 @@ jQuery(document).ready(function() {
     dataType: 'jsonp'
   })
   .done(function (msg) {
-    //alert('suxess' + msg );
     score_rcvr(msg)
   });
+}
 
-  function score_rcvr(data) {
-    $.each(data, function(i, field) {
-      // sample: <tr><td>Team One</td><td>300</td></tr>
-      $('#scores').append('<tr><td>' + i + '</td><td>' + field + '</td></tr>');
-    });
-  }
-
+function fetch_grid() {
   //fetch the grid data from the hackerbattleship API
   $.ajax({
     url: 'http://hackerbattleship/statsapi.php?mth=grid',
@@ -25,45 +27,47 @@ jQuery(document).ready(function() {
     dataType: 'jsonp'
   })
   .done(function (msg) {
-    //alert('suxess' + msg );
     grid_rcvr(msg)
   });
+}
 
-  function grid_rcvr(data) {
-    // iterate through the JSON data
-    $.each(data, function(k,v) {
+function score_rcvr(data) {
+  $.each(data, function(i, field) {
+    // sample: <tr><td>Team One</td><td>300</td></tr>
+    $('#scores').append('<tr><td>' + i + '</td><td>' + field + '</td></tr>');
+  });
+}
+
+function grid_rcvr(data) {
+  // iterate through the JSON data
+  var maxcols = 6;
+  var cur = 0;
+
+  $.each(data, function(k,v) {
+    if(cur === 0) {
+      $('#grid').append('<ul class="clear">');
       $('#grid').append('<li class="' + v + '">' + k + '</li>');
-    /*
-      var col = 0;
-      var maxcols = 7;
-      while( col < maxcols ) {
-        if( col === 0 ) {
-          // start a new row
-          $('#grid').append('<ul class="clear">');
-        }
-        if (col === 7) {
-          $('#grid').append('</ul'); // end this row
-          col = 0; // reset the counter
-        }
-        // add the data for this column
-        // sample: <li class="hit">A1</li>
-        $('#grid').append('<li class="' + v + '">' + k + '</li>');
-        // increment the counter
-        col++;
-      }
-    */
-    });
-    //$('#grid li:nth-child(7)').append('<br>');
+      cur++;
+    } else if(cur == maxcols) {
+      $('#grid').append('<li class="' + v + '">' + k + '</li>');
+      $('#grid').append('</ul>');
+      cur = 0;
+    } else {
+      $('#grid').append('<li class="' + v + '">' + k + '</li>');
+      cur++;
+    }
 
-    // tweak 'hits'
-    $('.hit').html('&nbsp;&nbsp;');
-    $('.hit').css('border', 'none');
-    $('.hit').css('background-color', 'inherit');
+  });
+}
 
-    // tweak 'misses'
-    $('.miss').html('&nbsp;&nbsp;');
-    $('.miss').css('border', 'none');
-    $('.miss').css('background-color', 'inherit');
-  }
+function fix_grid() {
+  // tweak 'hits'
+  $('.hit').html('&nbsp;&nbsp;');
+  $('.hit').css('border', 'none');
+  $('.hit').css('background-color', 'inherit');
 
-});
+  // tweak 'misses'
+  $('.miss').html('&nbsp;&nbsp;');
+  $('.miss').css('border', 'none');
+  $('.miss').css('background-color', 'inherit');
+}

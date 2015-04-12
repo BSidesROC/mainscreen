@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
 
-  fetch_scores(); // gets the scores from the API
-  fetch_grid();   // gets the grid from the API
+  setInterval(fetch_scores, 10000);  // gets the scores from the API every 10 secs.
+  setInterval(fetch_grid, 10000);    // gets the grid from the API every 10 secs.
 
 });
 
@@ -31,10 +31,12 @@ function fetch_grid() {
 }
 
 function score_rcvr(data) {
+  $('#scorebody').replaceWith('<tbody id="scorebody"></tbody>');
   $.each(data, function(i, field) {
     // sample: <tr><td>Team One</td><td>300</td></tr>
-    $('#scores').append('<tr><td>' + i + '</td><td>' + field + '</td></tr>');
+    $('#scorebody').append('<tr><td>' + i + '</td><td>' + field + '</td></tr>');
   });
+
 }
 
 function grid_rcvr(data) {
@@ -42,6 +44,7 @@ function grid_rcvr(data) {
   var maxcols = 6;
   var cur = 0;
 
+  $('#grid').replaceWith('<div id="grid"></div>');
   $.each(data, function(k,v) {
     if(cur === 0) {
       $('#grid').append('<ul class="clear">');
@@ -71,4 +74,7 @@ function fix_grid() {
   $('.miss').html('&nbsp;&nbsp;');
   $('.miss').css('border', 'none');
   $('.miss').css('background-color', 'inherit');
+}
+
+function gen_sched() {
 }

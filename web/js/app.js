@@ -1,7 +1,11 @@
 jQuery(document).ready(function() {
 
+  fetch_scores();                    // initial fetch of the score data
+  fetch_grid();                      // initial fetch of the grid data
   setInterval(fetch_scores, 10000);  // gets the scores from the API every 10 secs.
   setInterval(fetch_grid, 10000);    // gets the grid from the API every 10 secs.
+
+  gen_sched();
 
 });
 
@@ -77,4 +81,218 @@ function fix_grid() {
 }
 
 function gen_sched() {
+
+  /*------------------------------------------------------------------------
+   * END OF SCHEDULE
+   *----------------------------------------------------------------------*/
+  var schedule = {
+    // Date() params are: (YYYY,MM,DD,hh,mm)
+    'track1' : {
+      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
+      '0' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title' : 'Registration &amp; Breakfast',
+        'speaker' : '&nbsp;'
+      },
+      '1' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 5 - Intro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '2' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'time'    : '1429965000',
+        'title'   : 'Pretending To Be A Terrorist',
+        'speaker' : 'Steve Stasiukonis'
+      },
+      '3' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Tackling The Hard Problem Of Surveillance: Toward Privacy Protecting Protocols',
+        'speaker' : 'Robert Olson'
+      },
+      '4' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Big Game Hunting: Internet Data And You',
+        'speaker' : 'Silas Cutler'
+      },
+      '5' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Lunch',
+        'speaker' : '&nbsp;'
+      },
+      '6' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Exploring Layer 2 Network Security In Virtualized Environments - DHCP Attacks',
+        'speaker' : 'Ronny Bull'
+      },
+      '7' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Multipath TCP - Breaking Today\'s Networks With Tomorrow\'s Protocols',
+        'speaker' : 'Kate Pearce'
+      },
+      '8' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'TBD',
+        'speaker' : 'TBD'
+      },
+      '9' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'breakdown',
+        'speaker' : '&nbsp;'
+      },
+      '10' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Key Signing Party + Hacker Mixer',
+        'speaker' : 'Stealth Mode Sponsor'
+      },
+      '11' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'closedown - Outro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '12' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 0 - shutdown',
+        'speaker' : '&nbsp;'
+      }
+    },
+    'track2' : {
+      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
+      '0' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title' : 'Registration &amp; Breakfast',
+        'speaker' : '&nbsp;'
+      },
+      '1' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 5 - Intro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '2' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Enterprise Class Vulnerability Management Like A Boss',
+        'speaker' : 'Rockie Brockway'
+      },
+      '3' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Accidentally Awesome: How You Might Already Be An Effective Pentester',
+        'speaker' : 'Mike Lisi'
+      },
+      '4' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : '0wn The Con',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '5' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'breakdown',
+        'speaker' : '&nbsp;'
+      },
+      '6' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Lunch',
+        'speaker' : '&nbsp;'
+      },
+      '7' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'setup',
+        'speaker' : '&nbsp;'
+      },
+      '8' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Practical GPG',
+        'speaker' : 'algorythm'
+      },
+      '9' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Know Thy Enemy - Web Attacker Attribution',
+        'speaker' : 'Chaim Sanders'
+      },
+      '10' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'IPLOG? A Beginner\'s IDS For The WIN!',
+        'speaker' : 'Nathan Gibbs'
+      },
+      '11' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Lightning Talks',
+        'speaker' : 'YOU!'
+      },
+      '12' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'breakdown',
+        'speaker' : '&nbsp;'
+      },
+      '13' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'closedown - Outro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '14' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 0 - shutdown',
+        'speaker' : '&nbsp;'
+      }
+    },
+    'workshops' : {
+      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
+      '0' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title' : 'Registration &amp; Breakfast',
+        'speaker' : '&nbsp;'
+      },
+      '1' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 5 - Intro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '2' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'SDR Workshop',
+        'speaker' : 'Jon Szymaniak &amp; Alex Page'
+      },
+      '3' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'Lunch',
+        'speaker' : '&nbsp;'
+      },
+      '4' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'TOR Research Workshop',
+        'speaker' : 'antitree'
+      },
+      '5' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'TBD',
+        'speaker' : 'TBD'
+      },
+      '6' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'breakdown',
+        'speaker' : '&nbsp;'
+      },
+      '7' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'closedown - Outro Presentation',
+        'speaker' : 'BSidesROC Staff'
+      },
+      '8' : {
+        'time'    : new Date(2015,04,12,20,00),
+        'title'   : 'init 0 - shutdown',
+        'speaker' : '&nbsp;'
+      }
+    }
+  };
+
+  /*------------------------------------------------------------------------
+   * END OF SCHEDULE
+   *----------------------------------------------------------------------*/
+
+  var t = new Date().getTime();
+
+  schedule.track1.current++;
+  var current = schedule.track1.current;
+  var ctitle = schedule.track1[current].title;
+  var cspeaker = schedule.track1[current].speaker;
+
 }

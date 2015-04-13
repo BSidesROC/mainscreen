@@ -90,17 +90,17 @@ function gen_sched() {
     'track1' : {
       'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,55),
         'title' : 'Registration &amp; Breakfast',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '1' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,56),
         'title'   : 'init 5 - Intro Presentation',
         'speaker' : 'BSidesROC Staff'
       },
       '2' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,57),
         'time'    : '1429965000',
         'title'   : 'Pretending To Be A Terrorist',
         'speaker' : 'Steve Stasiukonis'
@@ -118,7 +118,7 @@ function gen_sched() {
       '5' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'Lunch',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '6' : {
         'time'    : new Date(2015,04,12,20,00),
@@ -153,23 +153,23 @@ function gen_sched() {
       '12' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'init 0 - shutdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff;'
       }
     },
     'track2' : {
       'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,55),
         'title' : 'Registration &amp; Breakfast',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '1' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,56),
         'title'   : 'init 5 - Intro Presentation',
         'speaker' : 'BSidesROC Staff'
       },
       '2' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,57),
         'title'   : 'Enterprise Class Vulnerability Management Like A Boss',
         'speaker' : 'Rockie Brockway'
       },
@@ -186,17 +186,17 @@ function gen_sched() {
       '5' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'breakdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       },
       '6' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'Lunch',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '7' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'setup',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       },
       '8' : {
         'time'    : new Date(2015,04,12,20,00),
@@ -221,7 +221,7 @@ function gen_sched() {
       '12' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'breakdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       },
       '13' : {
         'time'    : new Date(2015,04,12,20,00),
@@ -231,30 +231,30 @@ function gen_sched() {
       '14' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'init 0 - shutdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       }
     },
     'workshops' : {
       'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,55),
         'title' : 'Registration &amp; Breakfast',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '1' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,56),
         'title'   : 'init 5 - Intro Presentation',
         'speaker' : 'BSidesROC Staff'
       },
       '2' : {
-        'time'    : new Date(2015,04,12,20,00),
+        'time'    : new Date(2015,04,12,20,57),
         'title'   : 'SDR Workshop',
         'speaker' : 'Jon Szymaniak &amp; Alex Page'
       },
       '3' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'Lunch',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '4' : {
         'time'    : new Date(2015,04,12,20,00),
@@ -269,7 +269,7 @@ function gen_sched() {
       '6' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'breakdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       },
       '7' : {
         'time'    : new Date(2015,04,12,20,00),
@@ -279,7 +279,7 @@ function gen_sched() {
       '8' : {
         'time'    : new Date(2015,04,12,20,00),
         'title'   : 'init 0 - shutdown',
-        'speaker' : '&nbsp;'
+        'speaker' : 'BSidesROC Staff'
       }
     }
   };
@@ -290,9 +290,47 @@ function gen_sched() {
 
   var t = new Date().getTime();
 
-  schedule.track1.current++;
-  var current = schedule.track1.current;
-  var ctitle = schedule.track1[current].title;
-  var cspeaker = schedule.track1[current].speaker;
+  // NOW
+  schedule.track1.current++;                        // increment pointer
+  var c_t1 = schedule.track1.current;               // set t1 iterator to now
+  var c_t1_title = schedule.track1[c_t1].title;     // get t1 now title
+  var c_t1_speaker = schedule.track1[c_t1].speaker; // get t1 now speaker
+
+  var c_t2 = schedule.track1.current;               // set t2 iterator to now
+  var c_t2_title = schedule.track1[c_t2].title;     // get t2 now title
+  var c_t2_speaker = schedule.track1[c_t2].speaker; // get t2 now speaker
+
+  var c_t3 = schedule.track1.current;               // set t3 iterator to now
+  var c_t3_title = schedule.track1[c_t3].title;     // get t3 now title
+  var c_t3_speaker = schedule.track1[c_t3].speaker; // get t3 now speaker
+
+  // NEXT
+  schedule.track1.current++;                        // increment pointer
+  var n_t1 = schedule.track1.current;               // set iterator to next
+  var n_t1_title = schedule.track1[n_t1].title;     // get next title
+  var n_t1_speaker = schedule.track1[n_t1].speaker; // get next speaker
+
+  var n_t2 = schedule.track1.current;               // set t2 iterator to now
+  var n_t2_title = schedule.track1[n_t2].title;     // get t2 next title
+  var n_t2_speaker = schedule.track1[n_t2].speaker; // get t2 next speaker
+
+  var n_t3 = schedule.track1.current;               // set t3 iterator to now
+  var n_t3_title = schedule.track1[n_t3].title;     // get t3 next title
+  var n_t3_speaker = schedule.track1[n_t3].speaker; // get t3 next speaker
+
+  /* relevant li divs:
+   *  NOW: t1Now, t2Now, wkNow
+   *  NEXT: t1Next, t2Next, wkNext
+   */
+
+  // Change NOW list items
+  $('#t1Now').replaceWith('<li id="t1Now">' + c_t1_title + ' - ' + c_t1_speaker + '</li>');
+  $('#t2Now').replaceWith('<li id="t2Now">' + c_t2_title + ' - ' + c_t2_speaker + '</li>');
+  $('#t3Now').replaceWith('<li id="t3Now">' + c_t3_title + ' - ' + c_t3_speaker + '</li>');
+
+  // Change NEXT list items
+  $('#t1Next').replaceWith('<li id="t1Next">' + n_t1_title + ' - ' + n_t1_speaker + '</li>');
+  $('#t2Next').replaceWith('<li id="t2Next">' + n_t2_title + ' - ' + n_t2_speaker + '</li>');
+  $('#t3Next').replaceWith('<li id="t3Next">' + n_t3_title + ' - ' + n_t3_speaker + '</li>');
 
 }

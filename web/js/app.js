@@ -1,8 +1,8 @@
 jQuery(document).ready(function() {
-
+  fetch_scores();                    // initial fetch of the score data
+  fetch_grid();                      // initial fetch of the grid data
   setInterval(fetch_scores, 10000);  // gets the scores from the API every 10 secs.
   setInterval(fetch_grid, 10000);    // gets the grid from the API every 10 secs.
-
 });
 
 

@@ -1,12 +1,17 @@
-jQuery(document).ready(function() {
+// OMG! GLOBAL DOMINATION!
+var c_t1 = 0,                        // set the schedule iterator for all tracks to 0
+    c_t2 = 0,                        // we track this globally, because it gets
+    c_t3 = 0;                        // lost otherwise.
 
+
+jQuery(document).ready(function() {
   fetch_scores();                    // initial fetch of the score data
   fetch_grid();                      // initial fetch of the grid data
   gen_sched();                       // initial fetch of the schedule
   setInterval(fetch_scores, 10000);  // gets the scores from the API every 10 secs.
   setInterval(fetch_grid, 10000);    // gets the grid from the API every 10 secs.
 
-  setInterval(gen_sched, 60000);
+  setInterval(gen_sched, 30000);
 
 });
 
@@ -91,30 +96,29 @@ function gen_sched() {
     // WARNING: NO ZERO PADDING
     // WARNING TWO: JavaScript sucks and MM starts at 0 (=jan), 1 (=feb), etc.
     'track1' : {
-      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
-        'time'    : new Date(2015,3,16,20,07).getTime(),
+        'time'    : new Date(2015,3,16,20,30).getTime(),
         'title' : 'Registration &amp; Breakfast',
         'speaker' : 'BSidesROC &amp; ButAPub'
       },
       '1' : {
-        'time'    : new Date(2015,3,16,20.08).getTime(),
+        'time'    : new Date(2015,3,16,20.31).getTime(),
         'title'   : 'init 5 - Intro Presentation',
         'speaker' : 'BSidesROC Staff'
       },
       '2' : {
-        'time'    : new Date(2015,3,16,20,09).getTime(),
+        'time'    : new Date(2015,3,16,20,32).getTime(),
         'time'    : '1429965000',
         'title'   : 'Pretending To Be A Terrorist',
         'speaker' : 'Steve Stasiukonis'
       },
       '3' : {
-        'time'    : new Date(2015,3,16,20,10).getTime(),
+        'time'    : new Date(2015,3,16,20,33).getTime(),
         'title'   : 'Tackling The Hard Problem Of Surveillance: Toward Privacy Protecting Protocols',
         'speaker' : 'Robert Olson'
       },
       '4' : {
-        'time'    : new Date(2015,3,16,20,11).getTime(),
+        'time'    : new Date(2015,3,16,20,34).getTime(),
         'title'   : 'Big Game Hunting: Internet Data And You',
         'speaker' : 'Silas Cutler'
       },
@@ -160,7 +164,6 @@ function gen_sched() {
       }
     },
     'track2' : {
-      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
         'time'    : new Date(2015,04,12,20,55).getTime(),
         'title' : 'Registration &amp; Breakfast',
@@ -238,7 +241,6 @@ function gen_sched() {
       }
     },
     'workshops' : {
-      'current'   : -1, //this is an iterator, array starts at 0 so we set it to -1
       '0' : {
         'time'    : new Date(2015,04,12,20,55).getTime(),
         'title' : 'Registration &amp; Breakfast',
@@ -292,26 +294,23 @@ function gen_sched() {
    *----------------------------------------------------------------------*/
 
   // define vars for current slots
-  var c_t1,
-      c_t1_title,
+  var c_t1_title,
       c_t1_speaker,
-      c_t2, c_t2_title,
+      c_t2_title,
       c_t2_speaker,
-      c_t3,
       c_t3_title,
       c_t3_speaker = '';
 
   // define vars for next slots
-  var n_t1,
-      n_t1_title,
+  var n_t1, n_t2, n_t3 = 0;
+  var n_t1_title,
       n_t1_speaker,
-      n_t2,
       n_t2_title,
       n_t2_speaker,
-      n_t3,
       n_t3_title,
       n_t3_speaker = '';
 
+  // omg. javascript date() is a nightmare
   var date = new Date();
   var YYYY, MM, DD, hh, mm;
   YYYY = date.getFullYear();
@@ -322,18 +321,11 @@ function gen_sched() {
   t = new Date(YYYY,MM,DD,hh,mm).getTime();
 
 
+  // ==================================================================
   // figure out where we are on the schedule, based on the current time
-  if (schedule.track1.current == -1) {
-    // start of the day, increment to the first item
-    schedule.track1.current++;
-  }
-
-  c_t1 = schedule.track1.current;                 // set t1 iterator to now
-  c_t2 = schedule.track1.current;                 // set t2 iterator to now
-  c_t3 = schedule.track1.current;                 // set t3 iterator to now
+  // ==================================================================
 
   if( t > schedule.track1[c_t1].time ) {
-
     // we're past the last item, so set the tracks explicitly to nothing
     //
     // NOW
@@ -361,23 +353,21 @@ function gen_sched() {
     c_t1_speaker = schedule.track1[c_t1].speaker; // get t1 now speaker
     c_t2_title = schedule.track1[c_t2].title;     // get t2 now title
     c_t2_speaker = schedule.track1[c_t2].speaker; // get t2 now speaker
-    c_t3 = schedule.track1.current;               // set t3 iterator to now
     c_t3_title = schedule.track1[c_t3].title;     // get t3 now title
     c_t3_speaker = schedule.track1[c_t3].speaker; // get t3 now speaker
 
     // NEXT
-    schedule.track1.current++;                    // increment pointer
+    // increment the iterators
+    c_t1++;
+    c_t2++;
+    c_t3++;
 
-    n_t1 = schedule.track1.current;               // set t1 iterator to next
-    n_t2 = schedule.track1.current;               // set t2 iterator to next
-    n_t3 = schedule.track1.current;               // set t3 iterator to next
-
-    n_t1_title = schedule.track1[n_t1].title;     // get t1 next title
-    n_t1_speaker = schedule.track1[n_t1].speaker; // get t1 next speaker
-    n_t2_title = schedule.track1[n_t2].title;     // get t2 next title
-    n_t2_speaker = schedule.track1[n_t2].speaker; // get t2 next speaker
-    n_t3_title = schedule.track1[n_t3].title;     // get t3 next title
-    n_t3_speaker = schedule.track1[n_t3].speaker; // get t3 next speaker
+    n_t1_title = schedule.track1[c_t1].title;     // get t1 next title
+    n_t1_speaker = schedule.track1[c_t1].speaker; // get t1 next speaker
+    n_t2_title = schedule.track1[c_t2].title;     // get t2 next title
+    n_t2_speaker = schedule.track1[c_t2].speaker; // get t2 next speaker
+    n_t3_title = schedule.track1[c_t3].title;     // get t3 next title
+    n_t3_speaker = schedule.track1[c_t3].speaker; // get t3 next speaker
 
   }
 

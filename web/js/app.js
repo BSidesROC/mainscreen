@@ -91,201 +91,197 @@ function gen_sched() {
   /*------------------------------------------------------------------------
    * END OF SCHEDULE
    *----------------------------------------------------------------------*/
-  var schedule = {
-    // Date() params are: (YYYY,MM,DD,hh,mm).
-    // WARNING: NO ZERO PADDING
-    // WARNING TWO: JavaScript sucks and MM starts at 0 (=jan), 1 (=feb), etc.
-    'track1' : {
-      '0' : {
-        'time'    : new Date(2015,3,17,16,50).getTime(),
-        'title' : 'Registration &amp; Breakfast',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '1' : {
-        'time'    : new Date(2015,3,16,16,51).getTime(),
-        'title'   : 'init 5 - Intro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '2' : {
-        'time'    : new Date(2015,3,16,16,52).getTime(),
-        'time'    : '1429965000',
-        'title'   : 'Pretending To Be A Terrorist',
-        'speaker' : 'Steve Stasiukonis'
-      },
-      '3' : {
-        'time'    : new Date(2015,3,25,10,53).getTime(),
-        'title'   : 'Tackling The Hard Problem Of Surveillance: Toward Privacy Protecting Protocols',
-        'speaker' : 'Robert Olson'
-      },
-      '4' : {
-        'time'    : new Date(2015,3,25,11,00).getTime(),
-        'title'   : 'Big Game Hunting: Internet Data And You',
-        'speaker' : 'Silas Cutler'
-      },
-      '5' : {
-        'time'    : new Date(2015,3,25,12,00).getTime(),
-        'title'   : 'Lunch',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '6' : {
-        'time'    : new Date(2015,3,25,13,00).getTime(),
-        'title'   : 'Exploring Layer 2 Network Security In Virtualized Environments - DHCP Attacks',
-        'speaker' : 'Ronny Bull'
-      },
-      '7' : {
-        'time'    : new Date(2015,3,25,14,00).getTime(),
-        'title'   : 'Multipath TCP - Breaking Today\'s Networks With Tomorrow\'s Protocols',
-        'speaker' : 'Kate Pearce'
-      },
-      '8' : {
-        'time'    : new Date(2015,3,25,15,00).getTime(),
-        'title'   : 'TBD',
-        'speaker' : 'TBD'
-      },
-      '9' : {
-        'time'    : new Date(2015,3,25,16,00).getTime(),
-        'title'   : 'breakdown',
-        'speaker' : '&nbsp;'
-      },
-      '10' : {
-        'time'    : new Date(2015,3,25,17,00).getTime(),
-        'title'   : 'Key Signing Party + Hacker Mixer',
-        'speaker' : 'Stealth Mode Sponsor'
-      },
-      '11' : {
-        'time'    : new Date(2015,3,25,18,00).getTime(),
-        'title'   : 'closedown - Outro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '12' : {
-        'time'    : new Date(2015,3,25,19,00).getTime(),
-        'title'   : 'init 0 - shutdown',
-        'speaker' : 'BSidesROC Staff;'
-      }
+  var track1 = {
+    '0' : {
+      'time'    : new Date(2015,3,17,16,50).getTime(),
+      'title' : 'Registration &amp; Breakfast',
+      'speaker' : 'BSidesROC &amp; ButAPub'
     },
-    'track2' : {
-      '0' : {
-        'time'    : new Date(2015,3,25,8,00).getTime(),
-        'title' : 'Registration &amp; Breakfast',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '1' : {
-        'time'    : new Date(2015,3,25,8,30).getTime(),
-        'title'   : 'init 5 - Intro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '2' : {
-        'time'    : new Date(2015,3,25,9,00).getTime(),
-        'title'   : 'Enterprise Class Vulnerability Management Like A Boss',
-        'speaker' : 'Rockie Brockway'
-      },
-      '3' : {
-        'time'    : new Date(2015,3,25,10,00).getTime(),
-        'title'   : 'Accidentally Awesome: How You Might Already Be An Effective Pentester',
-        'speaker' : 'Mike Lisi'
-      },
-      '4' : {
-        'time'    : new Date(2015,3,25,11,00).getTime(),
-        'title'   : '0wn The Con',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '5' : {
-        'time'    : new Date(2015,3,25,11,30).getTime(),
-        'title'   : 'breakdown',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '6' : {
-        'time'    : new Date(2015,3,25,12,00).getTime(),
-        'title'   : 'Lunch',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '7' : {
-        'time'    : new Date(2015,3,25,13,00).getTime(),
-        'title'   : 'setup',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '8' : {
-        'time'    : new Date(2015,3,25,13,30).getTime(),
-        'title'   : 'Practical GPG',
-        'speaker' : 'algorythm'
-      },
-      '9' : {
-        'time'    : new Date(2015,3,25,14,00).getTime(),
-        'title'   : 'Know Thy Enemy - Web Attacker Attribution',
-        'speaker' : 'Chaim Sanders'
-      },
-      '10' : {
-        'time'    : new Date(2015,3,25,15,00).getTime(),
-        'title'   : 'IPLOG? A Beginner\'s IDS For The WIN!',
-        'speaker' : 'Nathan Gibbs'
-      },
-      '11' : {
-        'time'    : new Date(2015,3,25,16,00).getTime(),
-        'title'   : 'Lightning Talks',
-        'speaker' : 'YOU!'
-      },
-      '12' : {
-        'time'    : new Date(2015,3,25,17,00).getTime(),
-        'title'   : 'breakdown',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '13' : {
-        'time'    : new Date(2015,3,25,18,00).getTime(),
-        'title'   : 'closedown - Outro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '14' : {
-        'time'    : new Date(2015,3,25,19,00).getTime(),
-        'title'   : 'init 0 - shutdown',
-        'speaker' : 'BSidesROC Staff'
-      }
+    '1' : {
+      'time'    : new Date(2015,3,16,16,51).getTime(),
+      'title'   : 'init 5 - Intro Presentation',
+      'speaker' : 'BSidesROC Staff'
     },
-    'track3' : {
-      '0' : {
-        'time'    : new Date(2015,3,25,8,00).getTime(),
-        'title' : 'Registration &amp; Breakfast',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '1' : {
-        'time'    : new Date(2015,3,25,8,30).getTime(),
-        'title'   : 'init 5 - Intro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '2' : {
-        'time'    : new Date(2015,3,25,9,00).getTime(),
-        'title'   : 'SDR Workshop',
-        'speaker' : 'Jon Szymaniak &amp; Alex Page'
-      },
-      '3' : {
-        'time'    : new Date(2015,3,25,12,00).getTime(),
-        'title'   : 'Lunch',
-        'speaker' : 'BSidesROC &amp; ButAPub'
-      },
-      '4' : {
-        'time'    : new Date(2015,3,25,13,00).getTime(),
-        'title'   : 'TOR Research Workshop',
-        'speaker' : 'antitree'
-      },
-      '5' : {
-        'time'    : new Date(2015,3,25,16,00).getTime(),
-        'title'   : 'TBD',
-        'speaker' : 'TBD'
-      },
-      '6' : {
-        'time'    : new Date(2015,3,25,17,00).getTime(),
-        'title'   : 'breakdown',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '7' : {
-        'time'    : new Date(2015,3,25,18,00).getTime(),
-        'title'   : 'closedown - Outro Presentation',
-        'speaker' : 'BSidesROC Staff'
-      },
-      '8' : {
-        'time'    : new Date(2015,3,25,19,00).getTime(),
-        'title'   : 'init 0 - shutdown',
-        'speaker' : 'BSidesROC Staff'
-      }
+    '2' : {
+      'time'    : new Date(2015,3,16,16,52).getTime(),
+      'title'   : 'Pretending To Be A Terrorist',
+      'speaker' : 'Steve Stasiukonis'
+    },
+    '3' : {
+      'time'    : new Date(2015,3,25,10,53).getTime(),
+      'title'   : 'Tackling The Hard Problem Of Surveillance: Toward Privacy Protecting Protocols',
+      'speaker' : 'Robert Olson'
+    },
+    '4' : {
+      'time'    : new Date(2015,3,25,11,00).getTime(),
+      'title'   : 'Big Game Hunting: Internet Data And You',
+      'speaker' : 'Silas Cutler'
+    },
+    '5' : {
+      'time'    : new Date(2015,3,25,12,00).getTime(),
+      'title'   : 'Lunch',
+      'speaker' : 'BSidesROC &amp; ButAPub'
+    },
+    '6' : {
+      'time'    : new Date(2015,3,25,13,00).getTime(),
+      'title'   : 'Exploring Layer 2 Network Security In Virtualized Environments - DHCP Attacks',
+      'speaker' : 'Ronny Bull'
+    },
+    '7' : {
+      'time'    : new Date(2015,3,25,14,00).getTime(),
+      'title'   : 'Multipath TCP - Breaking Today\'s Networks With Tomorrow\'s Protocols',
+      'speaker' : 'Kate Pearce'
+    },
+    '8' : {
+      'time'    : new Date(2015,3,25,15,00).getTime(),
+      'title'   : 'TBD',
+      'speaker' : 'TBD'
+    },
+    '9' : {
+      'time'    : new Date(2015,3,25,16,00).getTime(),
+      'title'   : 'breakdown',
+      'speaker' : '&nbsp;'
+    },
+    '10' : {
+      'time'    : new Date(2015,3,25,17,00).getTime(),
+      'title'   : 'Key Signing Party + Hacker Mixer',
+      'speaker' : 'Stealth Mode Sponsor'
+    },
+    '11' : {
+      'time'    : new Date(2015,3,25,18,00).getTime(),
+      'title'   : 'closedown - Outro Presentation',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '12' : {
+      'time'    : new Date(2015,3,25,19,00).getTime(),
+      'title'   : 'init 0 - shutdown',
+      'speaker' : 'BSidesROC Staff;'
+    }
+  };
+
+  var track2 = {
+    '0' : {
+      'time'    : new Date(2015,3,25,8,00).getTime(),
+      'title' : 'Registration &amp; Breakfast',
+      'speaker' : 'BSidesROC &amp; ButAPub'
+    },
+    '1' : {
+      'time'    : new Date(2015,3,25,8,30).getTime(),
+      'title'   : 'init 5 - Intro Presentation',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '2' : {
+      'time'    : new Date(2015,3,25,9,00).getTime(),
+      'title'   : 'Enterprise Class Vulnerability Management Like A Boss',
+      'speaker' : 'Rockie Brockway'
+    },
+    '3' : {
+      'time'    : new Date(2015,3,25,10,00).getTime(),
+      'title'   : 'Accidentally Awesome: How You Might Already Be An Effective Pentester',
+      'speaker' : 'Mike Lisi'
+    },
+    '4' : {
+      'time'    : new Date(2015,3,25,11,00).getTime(),
+      'title'   : '0wn The Con',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '5' : {
+      'time'    : new Date(2015,3,25,11,30).getTime(),
+      'title'   : 'breakdown',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '6' : {
+      'time'    : new Date(2015,3,25,12,00).getTime(),
+      'title'   : 'Lunch',
+      'speaker' : 'BSidesROC &amp; ButAPub'
+    },
+    '7' : {
+      'time'    : new Date(2015,3,25,13,00).getTime(),
+      'title'   : 'setup',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '8' : {
+      'time'    : new Date(2015,3,25,13,30).getTime(),
+      'title'   : 'Practical GPG',
+      'speaker' : 'algorythm'
+    },
+    '9' : {
+      'time'    : new Date(2015,3,25,14,00).getTime(),
+      'title'   : 'Know Thy Enemy - Web Attacker Attribution',
+      'speaker' : 'Chaim Sanders'
+    },
+    '10' : {
+      'time'    : new Date(2015,3,25,15,00).getTime(),
+      'title'   : 'IPLOG? A Beginner\'s IDS For The WIN!',
+      'speaker' : 'Nathan Gibbs'
+    },
+    '11' : {
+      'time'    : new Date(2015,3,25,16,00).getTime(),
+      'title'   : 'Lightning Talks',
+      'speaker' : 'YOU!'
+    },
+    '12' : {
+      'time'    : new Date(2015,3,25,17,00).getTime(),
+      'title'   : 'breakdown',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '13' : {
+      'time'    : new Date(2015,3,25,18,00).getTime(),
+      'title'   : 'closedown - Outro Presentation',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '14' : {
+      'time'    : new Date(2015,3,25,19,00).getTime(),
+      'title'   : 'init 0 - shutdown',
+      'speaker' : 'BSidesROC Staff'
+    }
+  };
+
+  var track3 = {
+    '0' : {
+      'time'    : new Date(2015,3,25,8,00).getTime(),
+      'title' : 'Registration &amp; Breakfast',
+      'speaker' : 'BSidesROC &amp; ButAPub'
+    },
+    '1' : {
+      'time'    : new Date(2015,3,25,8,30).getTime(),
+      'title'   : 'init 5 - Intro Presentation',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '2' : {
+      'time'    : new Date(2015,3,25,9,00).getTime(),
+      'title'   : 'SDR Workshop',
+      'speaker' : 'Jon Szymaniak &amp; Alex Page'
+    },
+    '3' : {
+      'time'    : new Date(2015,3,25,12,00).getTime(),
+      'title'   : 'Lunch',
+      'speaker' : 'BSidesROC &amp; ButAPub'
+    },
+    '4' : {
+      'time'    : new Date(2015,3,25,13,00).getTime(),
+      'title'   : 'TOR Research Workshop',
+      'speaker' : 'antitree'
+    },
+    '5' : {
+    'time'    : new Date(2015,3,25,16,00).getTime(),
+      'title'   : 'TBD',
+      'speaker' : 'TBD'
+    },
+    '6' : {
+      'time'    : new Date(2015,3,25,17,00).getTime(),
+      'title'   : 'breakdown',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '7' : {
+      'time'    : new Date(2015,3,25,18,00).getTime(),
+      'title'   : 'closedown - Outro Presentation',
+      'speaker' : 'BSidesROC Staff'
+    },
+    '8' : {
+      'time'    : new Date(2015,3,25,19,00).getTime(),
+      'title'   : 'init 0 - shutdown',
+      'speaker' : 'BSidesROC Staff'
     }
   };
 
@@ -302,7 +298,6 @@ function gen_sched() {
       c_t3_speaker = '';
 
   // define vars for next slots
-  var n_t1, n_t2, n_t3 = 0;
   var n_t1_title,
       n_t1_speaker,
       n_t2_title,
@@ -313,66 +308,34 @@ function gen_sched() {
   // omg. javascript date() is a nightmare
   var date = new Date();
   var YYYY, MM, DD, hh, mm;
+
   YYYY = date.getFullYear();
   MM = date.getMonth();
   DD = date.getDate();
   hh = date.getHours();
   mm = date.getMinutes();
+
   t = new Date(YYYY,MM,DD,hh,mm).getTime();
 
+  // NOW
+  c_t1_title = track1[c_t1].title;     // get t1 now title
+  c_t1_speaker = track1[c_t1].speaker; // get t1 now speaker
+  c_t2_title = track2[c_t2].title;     // get t2 now title
+  c_t2_speaker = track2[c_t2].speaker; // get t2 now speaker
+  c_t3_title = track3[c_t3].title;     // get t3 now title
+  c_t3_speaker = track3[c_t3].speaker; // get t3 now speaker
 
-  // ==================================================================
-  // figure out where we are on the schedule, based on the current time
-  // ==================================================================
+  // NEXT
+  c_t1++;
+  c_t2++;
+  c_t3++;
 
-  if( t > schedule.track1[c_t1].time ) {
-    //alert("t= " + t);
-    //alert("c_t1= " + c_t1);
-
-    // we're past the last item, so set the tracks explicitly to nothing
-    //
-    // NOW
-    c_t1_title = 'Nothing';                      // set t1 now title
-    c_t1_speaker = 'No one';                     // set t1 now speaker
-    c_t2_title = 'Nothing';                      // set t2 now title
-    c_t2_speaker = 'No one';                     // set t2 now speaker
-    c_t3_title = 'Nothing';                      // set t3 now title
-    c_t3_speaker = 'No one';                     // set t3 now speaker
-    //
-    // NEXT
-    n_t1_title = 'Nothing';                      // set t1 next title
-    n_t1_speaker = 'No one';                     // set t1 next speaker
-    n_t2_title = 'Nothing';                      // set t2 next title
-    n_t2_speaker = 'No one';                     // set t2 next speaker
-    n_t3_title = 'Nothing';                      // set t3 next title
-    n_t3_speaker = 'No one';                     // set t3 next speaker
-
-  } else {
-
-    // we're somewhere on the schedule, get the data
-
-    // NOW
-    c_t1_title = schedule.track1[c_t1].title;     // get t1 now title
-    c_t1_speaker = schedule.track1[c_t1].speaker; // get t1 now speaker
-    c_t2_title = schedule.track1[c_t2].title;     // get t2 now title
-    c_t2_speaker = schedule.track1[c_t2].speaker; // get t2 now speaker
-    c_t3_title = schedule.track1[c_t3].title;     // get t3 now title
-    c_t3_speaker = schedule.track1[c_t3].speaker; // get t3 now speaker
-
-    // NEXT
-    // increment the iterators
-    c_t1++;
-    c_t2++;
-    c_t3++;
-
-    n_t1_title = schedule.track1[c_t1].title;     // get t1 next title
-    n_t1_speaker = schedule.track1[c_t1].speaker; // get t1 next speaker
-    n_t2_title = schedule.track1[c_t2].title;     // get t2 next title
-    n_t2_speaker = schedule.track1[c_t2].speaker; // get t2 next speaker
-    n_t3_title = schedule.track1[c_t3].title;     // get t3 next title
-    n_t3_speaker = schedule.track1[c_t3].speaker; // get t3 next speaker
-
-  }
+  n_t1_title = track1[c_t1].title;     // get t1 next title
+  n_t1_speaker = track1[c_t1].speaker; // get t1 next speaker
+  n_t2_title = track2[c_t2].title;     // get t2 next title
+  n_t2_speaker = track2[c_t2].speaker; // get t2 next speaker
+  n_t3_title = track3[c_t3].title;     // get t3 next title
+  n_t3_speaker = track3[c_t3].speaker; // get t3 next speaker
 
   /* relevant li divs:
    *  NOW: t1Now, t2Now, wkNow
